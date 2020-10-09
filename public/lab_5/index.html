@@ -7,6 +7,7 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <div class="wrapper">
     <div class="container">
         <h1>
             Michael Ajibade's lab 4
@@ -38,7 +39,7 @@
                 <li>
                     <p class ="checkbox-list-label"></p>
                            Age</p>
-                    <ul class="flex-inner">
+                    <ul class='flex-inner'>
                         <li>
                             <input type="checkbox" id="eighteen-to-thirtyfive">
                             <label for="eighteen-to-thirtyfive">18-35</label>
@@ -60,6 +61,7 @@
             </ul>
         </form>
     </div>
+    </div>
 <script>
     function testFunction() {
         fetch('/api')
@@ -74,12 +76,18 @@
             }))
              return fruits;
         })
+        .then((response) => response.text())
+        .then((response) => {
+        console.log(response);
+             const content = document.querySelector("h1")
+             new.innerHTML = response;
+             document.querySelector("body").style.backgroundColor = "#74992e"; 
+        })  
         .then((response) => {console.log(response)})
         .catch((err,m) => {
             console.log(err);
         })
-             console.log(response);
-             document.querySelector("body").style.backgroundcolor = "#74992e";    
+             
    }
 </script>
 </body>
