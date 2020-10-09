@@ -17,9 +17,7 @@ app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
 
-    res.send(`Lab 5 for ${process.env.NAME}`);
-
-    res.send('Hello World');
+    res.send(`Lab 5 for Michael Ajibade`);
 
   })
   .post((req, res) => {
