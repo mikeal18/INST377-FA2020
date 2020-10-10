@@ -70,11 +70,12 @@
             console.log(response);
             document.querySelector('hi').innerText = response;
             document.querySelector("body").style.backgroundColor = "#74992e"; 
+            const content = document.querySelector('.flex-outer');
+            document.content.style.margin = "0px auto";
             const fruits =['mango', 'banana', 'orange'];
             const checks = document.querySelectorAll('.flex-inner li label')
             checks.forEach(((check, i) => {
                 const text = check.innerText;
-                console.log(text);
                 check.innerText = fruits[i];
             }))
             return fruits;
