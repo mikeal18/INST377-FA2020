@@ -68,7 +68,7 @@
         .then((response) => response.text())
         .then((response) => {
             const fruits =['mango', 'banana', 'orange'];
-            const checks = document.querySelectorAll('.flex-inner label')
+            const checks = document.querySelectorAll(".checkbox-list-label")
             console.log(checks.length, checks[0]);
             checks.forEach(((check, i) => {
                 console.log(check, i);
