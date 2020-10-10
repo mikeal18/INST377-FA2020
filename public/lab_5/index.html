@@ -7,10 +7,10 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="wrapper">
     <div class="container">
         <h1>
-            Lab 5 For Michael Ajibade
+            Michael Ajibade's lab 4
         </h1>
         <form action = "/api" method ="post">
             <ul class ="flex-outer">
@@ -61,26 +61,37 @@
             </ul>
         </form>
     </div>
-
+    </div>
 <script>
     function testFunction() {
         fetch('/api')
         .then((response) => response.text())
         .then((response) => {
             console.log(response);
-            document.querySelector('h1').innerText = response;
-            document.querySelector("body").style.backgroundColor = "#74992e"; 
-            document.querySelector('flex-outer').style.margin = "0 auto";
-            document.querySelector(".checkbox-list-label").innerHTML ="fruits";
             const fruits =['mango', 'banana', 'orange'];
-            const checks = document.querySelectorAll('.flex-inner li label');
-            checks.forEach(((check, i)=>{
-                const text = check.innerHTML;
+            const checks = document.querySelectorAll('.flex-inner li label')
+            console.log(checks.length, checks[0]);
+            checks.forEach(((check, i) => {
+                console.log(check, i);
                 check.innerText = fruits[i];
             }))
-             
+             return fruits;
+             document.querySelector('h1').innerText = response;
+             document.querySelector("body").style.backgroundColor = "#74992e"; 
+             document.querySelector('flex-outer').style.margin = "0 auto";
         })
-    }
+        
+        function testFunction() {
+        fetch('/api')
+        .then((response) => response.text())
+        .then((response) => {
+        })
+        .then((response) => {console.log(response)})
+        .catch((err,m) => {
+            console.log(err);
+        })
+        }         
+   }
 </script>
 </body>
 </html>
