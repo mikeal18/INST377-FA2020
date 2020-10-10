@@ -10,7 +10,7 @@
     <div class="wrapper">
     <div class="container">
         <h1>
-            Michael Ajibade's lab 4
+            Lab 5 For Michael Ajibade
         </h1>
         <form action = "/api" method ="post">
             <ul class ="flex-outer">
@@ -68,19 +68,19 @@
         .then((response) => response.text())
         .then((response) => {
             const fruits =['mango', 'banana', 'orange'];
-            const checks = document.querySelectorAll(".checkbox-list-label")
-            console.log(checks.length, checks[0]);
-            checks.forEach(((check, i) => {
-                console.log(check, i);
-                check.innerText = fruits[i];
-            }))
-             return fruits;
+            const checks = document.querySelectorAll('.flex-inner li label')
+            checks.forEach((el, i) => {
+                const text = el.innerText;
+                console.log(text);
+                el.innerText = fruits[i];
+            })
+             
         })
+        
         .then((response) => response.text())
         .then((response) => {
         console.log(response);
-             const content = document.querySelector("h1")
-             new.innerHTML = response;
+             document.querySelector('hi').textContent = response;
              document.querySelector("body").style.backgroundColor = "#74992e"; 
         })  
         .then((response) => {console.log(response)})
@@ -89,6 +89,7 @@
         })
              
    }
+   const myFunc = () =>{}
 </script>
 </body>
 </html>
