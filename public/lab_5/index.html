@@ -74,10 +74,10 @@
             document.querySelector(".checkbox-list-label").innerHTML ="fruits";
             const fruits =['mango', 'banana', 'orange'];
             const checks = document.querySelectorAll('.flex-inner li label');
-            checks.forEach((check, i)=>{
-                const text = check.innerText;
+            checks.forEach(((check, i)=>{
+                const text = check.innerHTML;
                 check.innerText = fruits[i];
-            })
+            }))
              
         })
     }
