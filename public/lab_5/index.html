@@ -68,30 +68,31 @@
         .then((response) => response.text())
         .then((response) => {
             console.log(response);  
+
             document.querySelector('flex-outer').style.margin = "0 auto";
-            document.querySelector("body").style.backgroundColor = "#74992e";
-            const fruits =['mango', 'banana', 'orange'];
+            
+            const body = document.querySelector("body");
+            document.body.style.backgroundColor = "#74992e";
+
+            const age = document.querySelector('.checkbox-list-label')
+            age.textContent = "Fruits";
+
+            
             const checks = document.querySelectorAll('.flex-inner li label')
-            console.log(checks.length, checks[0]);
+            const fruits =['mango', 'banana', 'orange']
+            
             checks.forEach((check, i) => {
-                console.log(check, i);
                 check.innerText = fruits[i];
             })
-             return fruits;
+             
              document.querySelector('h1').innerText = response;
               
-        })
-        
-        function testFunction() {
-        fetch('/api')
-        .then((response) => response.text())
-        .then((response) => {
         })
         .then((response) => {console.log(response)})
         .catch((err,m) => {
             console.log(err);
         })
-        }         
+               
    }
 </script>
 </body>
