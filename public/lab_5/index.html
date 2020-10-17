@@ -76,15 +76,14 @@
 
             const age = document.querySelector('.checkbox-list-label')
             age.textContent = "Fruits";
-
-            
+            const fruits =['mango', 'banana', 'orange'];
             const checks = document.querySelectorAll('.flex-inner li label')
-            const fruits =['mango', 'banana', 'orange']
-            
+            console.log(checks.length, checks[0]);
             checks.forEach((check, i) => {
+                console.log(check, i);
                 check.innerText = fruits[i];
             })
-             
+             return fruits;
              document.querySelector('h1').innerText = response;
               
         })
