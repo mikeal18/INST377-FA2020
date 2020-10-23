@@ -67,32 +67,27 @@
         fetch('/api')
         .then((response) => response.text())
         .then((response) => {
-            console.log(response);  
-            document.querySelector('flex-outer').style.margin = "0 auto";
-            document.querySelector("body").style.backgroundColor = "#74992e";
+            console.log(response); 
+            const header = document.querySelector('h1')
+            const title = document.querySelector('title')
+            header.innerText = response;
+            title.innerText = response;
+            const body = document.querySelector('body')
+            body.style.backgroundColor = "#74992e";
+            const forms = document.querySelector('.flex-outer');
+            forms.style.margin = '0 auto';
+            const age = document.querySelector('.flex-outer li p');
+            age.innerText = "fruits";
             const fruits =['mango', 'banana', 'orange'];
-            const checks = document.querySelectorAll('.flex-inner li label')
+            const checks = document.querySelectorAll('.flex-inner label')
             console.log(checks.length, checks[0]);
             checks.forEach((check, i) => {
                 console.log(check, i);
                 check.innerText = fruits[i];
-            })
-             return fruits;
-             document.querySelector('h1').innerText = response;
-              
-        })
-        
-        function testFunction() {
-        fetch('/api')
-        .then((response) => response.text())
-        .then((response) => {
-        })
-        .then((response) => {console.log(response)})
-        .catch((err,m) => {
-            console.log(err);
-        })
-        }         
-   }
+             })
+             
+        })  
+    }     
 </script>
 </body>
 </html>
