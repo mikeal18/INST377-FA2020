@@ -50,8 +50,8 @@ document.body.addEventListener('submit', async (e) => {
       $('form').prepend(ul);
        newlist.forEach((element, i) => {
          const li = document.createElement('li');
-         $(li).append('<input type ="checkbox" value =$(element.code) id = $(element.code) />');
-         $(li).append('<label for=$(element.code)>$(element.name)</label>');
+         $(li).append('<input type ="checkbox" value =${element.code} id = ${element.code} />');
+         $(li).append('<label for=${element.code}>${element.name}</label>');
          $(ul).append(li);
        })
       console.log('fromServer', fromServer);
