@@ -17,6 +17,7 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -54,7 +55,7 @@ document.body.addEventListener('submit', async (e) => {
          $(li).append(`<label for=${element.code}>${element.name}</label>`);
          $(ul).append(li);
        })
-      
+       uniquify( newlist.filter(function(x){return true}) )
     })
     .catch((err) => console.log(err));
 });
