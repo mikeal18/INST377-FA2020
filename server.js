@@ -27,9 +27,10 @@ app.route('/api')
     res.send(`Lab 5 for Michael Ajibade`);
 
   })
-  .post((req, res) => {
-    console.log('POST request detected');
-    console.log('Form data in res.body', req.body);
+  .post(async(req, res) => {
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const json = await data.json();
+    console.log('fetch request data', data);
     res.json(countries);
   });
 
