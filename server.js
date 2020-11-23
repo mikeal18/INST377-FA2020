@@ -3,7 +3,10 @@
 /* eslint-disable no-unused-vars */
 import express from 'express';
 import dotenv from 'dotenv';
+<<<<<<< HEAD
 import countries from './public/lab_6/countries.js';
+=======
+>>>>>>> 1f589382d61739e7e31d3581ed70007a5f201e39
 import fetch from 'node-fetch';
 
 dotenv.config();
@@ -22,8 +25,9 @@ app.use((req, res, next) => {
 });
 
 app.route('/api')
-  .get((req, res) => {
+  .get(async (req, res) => {
     console.log('GET request detected');
+<<<<<<< HEAD
 <<<<<<< HEAD
     res.send(`Lab 5 for Michael Ajibade`);
 
@@ -35,12 +39,26 @@ app.route('/api')
     res.json(countries);
 =======
     res.send('Hello World');
+=======
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const json = await data.json();
+    console.log('data from fetch', json);
+    res.json(json);
+>>>>>>> 1f589382d61739e7e31d3581ed70007a5f201e39
   })
-  .post((req, res) => {
+  .post(async (req, res) => {
     console.log('POST request detected');
     console.log('Form data in res.body', req.body);
+<<<<<<< HEAD
     res.send('Hello World');
 >>>>>>> 010f2a70665ed43531a664b33587c2e19654936e
+=======
+
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
+    const json = await data.json();
+    console.log('data from fetch', json);
+    res.json(json);
+>>>>>>> 1f589382d61739e7e31d3581ed70007a5f201e39
   });
 
 app.listen(port, () => {
