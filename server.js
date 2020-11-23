@@ -24,6 +24,7 @@ app.use((req, res, next) => {
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
+<<<<<<< HEAD
     res.send(`Lab 5 for Michael Ajibade`);
 
   })
@@ -32,6 +33,14 @@ app.route('/api')
     const json = await data.json();
     console.log('fetch request data', data);
     res.json(countries);
+=======
+    res.send('Hello World');
+  })
+  .post((req, res) => {
+    console.log('POST request detected');
+    console.log('Form data in res.body', req.body);
+    res.send('Hello World');
+>>>>>>> 010f2a70665ed43531a664b33587c2e19654936e
   });
 
 app.listen(port, () => {
